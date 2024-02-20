@@ -3,10 +3,98 @@ html, body {
     margin: 0;
     background-color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --color-incorrect-guess:gray;
+    --color-correct-guess:#538d4e;
+    --color-almost-guess: #c9b458;
 }
 
 * {
     box-sizing: border-box;
+}
+
+
+/* Task 1 
+    Use flexbox to layout the header with the hamburger menu on the left, 
+    heading in the center, and icons on the right
+*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Task 2
+    Use gridbox to implement the keyboard layout
+*/
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    gap: 5px;
+}  
+
+/* Task 3 
+    Set up the grid of words and the grid for letters. 
+    Make sure letters are in the center of their container, 
+    and set different background colors for "wrong" "correct" "almost"
+*/
+.letter-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    padding: 1rem;
+    width: 400px;
+    max-width: 450px;
+}
+
+.guess {
+    border: 2px solid gray;
+    font-size: 3rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.guess-wrong {
+    background-color: var(--color-incorrect-guess);
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    font-size: 55px;
+}
+
+.guess-correct {
+    background-color: var(--color-correct-guess);
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    font-size: 55px;
+    color: white;
+}
+
+.guess-almost {
+    background-color: var(--color-almost-guess);
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    font-size: 55px;
+    color: white;
+}
+
+/* 
+    Task 4
+    Center the letter grid and keyboard on the screen
+    (use whatever layout technique you want for this)
+*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Google Icons */
@@ -22,8 +110,6 @@ html, body {
     border: 2px solid gray;
     font-size: 3rem;
 }
-
-
 .key {
     background-color: lightgrey;
     font-size: 1.2rem;
